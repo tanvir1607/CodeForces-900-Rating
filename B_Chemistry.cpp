@@ -18,11 +18,11 @@ int main()
         string str;
         cin >> str;
 
-        int oddPairs = 0;
+        int oddCount = 0;
         set<char> Set(str.begin(), str.end());
         for (auto ch : Set) 
-            oddPairs += count(str.begin(), str.end(), ch) & 1;
-        cout << (oddPairs - del <= 1 ? "YES" : "NO") << endl;
+            oddCount += count(str.begin(), str.end(), ch) & 1;
+        cout << (oddCount - del <= 1 ? "YES" : "NO") << endl;
     }
 
     return 0;
