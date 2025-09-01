@@ -47,7 +47,7 @@ int main()
 
         int i = 1;
         while (!(num % i)) i++;
-        cout << i - 1 << endl;
+        cout << --i << endl;
     }
 
     return 0;
