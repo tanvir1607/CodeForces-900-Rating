@@ -13,14 +13,10 @@ int main()
     cin >> test;
     while (test--)
     {
-        ll a, b, size;
+        ll a, b, size, x;
         cin >> a >> b >> size;
-        vector<ll> vec(size);
-        for (ll &x : vec) cin >> x;
-
-        ll sum = b;
-        for (ll x : vec) sum += min(x, a - 1);
-        cout << sum << endl;
+        while (size--) cin >> x, b += min(x, a - 1);
+        cout << b << endl;
     }
 
     return 0;
