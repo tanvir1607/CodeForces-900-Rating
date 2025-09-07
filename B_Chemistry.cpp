@@ -14,14 +14,12 @@ int main()
     while (test--)
     {
         int size, del;
-        cin >> size >> del;
         string str;
-        cin >> str;
+        cin >> size >> del >> str;
 
         int oddCount = 0;
         set<char> Set(str.begin(), str.end());
-        for (auto ch : Set) 
-            oddCount += count(str.begin(), str.end(), ch) & 1;
+        for (char ch : Set) oddCount += count(str.begin(), str.end(), ch) & 1;
         cout << (oddCount - del <= 1 ? "YES" : "NO") << endl;
     }
 
