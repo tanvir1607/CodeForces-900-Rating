@@ -5,7 +5,7 @@ typedef long long ll;
 #define endl '\n'
 #define optimize() ios::sync_with_stdio(false); cin.tie(nullptr);
 
-int dx[4] = {1, 1, -1, -1}, 
+int dx[4] = {1, 1, -1, -1},
     dy[4] = {1, -1, 1, -1};
 
 int main() 
@@ -16,21 +16,22 @@ int main()
     cin >> test;
     while (test--)
     {
-        ll a, b, kingX, kingY, queenX, queenY;
+        int a, b, kingX, kingY, queenX, queenY;
         cin >> a >> b >> kingX >> kingY >> queenX >> queenY;
 
-        set<pair<ll, ll>> king_pos, queen_pos;
-        for(int i = 0; i < 4; i++)
+        set<pair<int, int>> kingPos, queenPos;
+        for (int i = 0; i < 4; i++)
         {
-            king_pos.insert({kingX + dx[i] * a, kingY + dy[i] * b});
-            king_pos.insert({kingX + dx[i] * b, kingY + dy[i] * a});
-            queen_pos.insert({queenX + dx[i] * a, queenY + dy[i] * b});
-            queen_pos.insert({queenX + dx[i] * b, queenY + dy[i] * a});
+            kingPos.insert({kingX + a * dx[i], kingY + b * dy[i]});
+            kingPos.insert({kingX + b * dx[i], kingY + a * dy[i]});
+
+            queenPos.insert({queenX + a * dx[i], queenY + b * dy[i]});
+            queenPos.insert({queenX + b * dx[i], queenY + a * dy[i]});
         }
         int ans = 0;
-        for (auto position : king_pos) ans += queen_pos.count(position);
+        for (auto pos : kingPos) ans += queenPos.count(pos);
         cout << ans << endl;
     }
+
     return 0;
 }
-

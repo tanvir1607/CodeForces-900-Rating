@@ -18,12 +18,14 @@ int main()
         vector<int> vec(size);
         for (int &x : vec) cin >> x;
         
-        if (size & 1) cout  << 4 << endl 
-                            << 1 << " " << size - 1 << endl 
-                            << 1 << " " << size - 1 << endl
-                            << size - 1 << " " << size << endl
-                            << size - 1 << " " << size << endl;
-        else cout   << 2 << endl 
+        if (size & 1) 
+            cout    << 4 << endl 
+                    << 1 << " " << size - 1 << endl 
+                    << 1 << " " << size - 1 << endl
+                    << size - 1 << " " << size << endl
+                    << size - 1 << " " << size << endl;
+        else 
+            cout    << 2 << endl 
                     << 1 << " " << size << endl 
                     << 1 << " " << size << endl;
     }
