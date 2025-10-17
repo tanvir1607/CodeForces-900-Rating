@@ -5,8 +5,8 @@ typedef long long ll;
 #define endl '\n'
 #define optimize() ios::sync_with_stdio(false); cin.tie(nullptr);
 
-int dx[4] = {1, 1, -1, -1},
-    dy[4] = {1, -1, 1, -1};
+vector<int> dx = {1, 1, -1, -1};
+vector<int> dy = {1, -1, 1, -1};
 
 int main() 
 {
@@ -16,11 +16,11 @@ int main()
     cin >> test;
     while (test--)
     {
-        int a, b, kingX, kingY, queenX, queenY;
+        ll a, b, kingX, kingY, queenX, queenY;
         cin >> a >> b >> kingX >> kingY >> queenX >> queenY;
 
-        set<pair<int, int>> kingPos, queenPos;
-        for (int i = 0; i < 4; i++)
+        set<pair<ll, ll>> kingPos, queenPos;
+        for (int i = 0; i < dx.size(); i++)
         {
             kingPos.insert({kingX + a * dx[i], kingY + b * dy[i]});
             kingPos.insert({kingX + b * dx[i], kingY + a * dy[i]});
@@ -28,10 +28,11 @@ int main()
             queenPos.insert({queenX + a * dx[i], queenY + b * dy[i]});
             queenPos.insert({queenX + b * dx[i], queenY + a * dy[i]});
         }
-        int ans = 0;
-        for (auto pos : kingPos) ans += queenPos.count(pos);
+        ll ans = 0;
+        for (auto position : kingPos) ans += queenPos.count(position);
         cout << ans << endl;
     }
 
     return 0;
 }
+
