@@ -19,8 +19,7 @@ int main()
 
         int oddCount = 0;
         set<char> Set(str.begin(), str.end());
-        for (char ch : Set) 
-            oddCount += count(str.begin(), str.end(), ch) & 1;
+        for (char ch : Set) oddCount += count(str.begin(), str.end(), ch) & 1;
         cout << (oddCount - del <= 1 ? "YES" : "NO") << endl;
     }
 
