@@ -19,8 +19,7 @@ int main()
         for (int &x : vec) cin >> x;
         
         int k = 0;
-        for (int i = 0; i < size; i++)
-            k = __gcd(abs(vec[i] - (i + 1)), k);
+        for (int i = 0; i < size; i++) k = __gcd(abs(vec[i] - (i + 1)), k);
         cout << k << endl;
     }
 
