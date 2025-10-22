@@ -13,14 +13,15 @@ int main()
     cin >> test;
     while (test--)
     {
-        int size, del;
+        int size, k;
         string str;
-        cin >> size >> del >> str;
+        cin >> size >> k >> str;
 
         int oddCount = 0;
-        set<char> Set(str.begin(), str.end());
-        for (char ch : Set) oddCount += count(str.begin(), str.end(), ch) & 1;
-        cout << (oddCount - del <= 1 ? "YES" : "NO") << endl;
+        set<char> letters(str.begin(), str.end());
+        for (char letter : letters) 
+            oddCount += count(str.begin(), str.end(), letter) & 1;
+        cout << (oddCount - k <= 1 ? "YES" : "NO") << endl;
     }
 
     return 0;
