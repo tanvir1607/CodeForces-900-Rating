@@ -21,7 +21,7 @@ int main()
         cin >> a >> b >> kingX >> kingY >> queenX >> queenY;
 
         set<pair<ll, ll>> kingPos, queenPos;
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 5; i++)
         {
             kingPos.insert({kingX + a * dx[i], kingY + b * dy[i]});
             kingPos.insert({kingX + b * dx[i], kingY + a * dy[i]});
@@ -64,7 +64,7 @@ int main()
         cin >> a >> b >> kingX >> kingY >> queenX >> queenY;
 
         map<pair<ll, ll>, bool> kingPos, queenPos;
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 5; i++)
         {
             kingPos[{kingX + a * dx[i], kingY + b * dy[i]}] = true;
             kingPos[{kingX + b * dx[i], kingY + a * dy[i]}] = true;
