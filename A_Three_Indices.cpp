@@ -18,7 +18,7 @@ int main()
         cin >> size;
         vector<int> vec(size);
         for (int &x : vec) cin >> x;
-        
+
         bool found = false;
         for (int j = 1; j < size - 1 && !found; j++)
         {
@@ -30,12 +30,11 @@ int main()
                 if (vec[j] > vec[right]) k = right;
             
             if (i != -1 && k != -1)
-            {
+                found = true,
                 cout << "YES" << endl << ++i << " " << ++j << " " << ++k << endl;
-                found = true;
-            }
         }
         if (!found) cout << "NO" << endl;
+        
     }
 
     return 0;
@@ -69,8 +68,7 @@ int main()
         int i = 0, j = 1, k = 2;
         bool found = false;
         for ( ; k < size && !found; i++, j++, k++)
-            if (vec[i] < vec[j] && vec[j] > vec[k]) 
-                found = true;
+            if (vec[i] < vec[j] && vec[j] > vec[k]) found = true;
         
         if (found) cout << "YES" << endl << i << " " << j << " " << k << endl;
         else cout << "NO" << endl;
@@ -117,6 +115,5 @@ int main()
 
     return 0;
 }
-
 
 
