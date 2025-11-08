@@ -16,15 +16,17 @@ int main()
         int num;
         cin >> num;
 
-        int count2 = 0, count3 = 0;
-        while (num > 0 && num % 2 == 0) count2++, num /= 2;
-        while (num > 0 && num % 3 == 0) count3++, num /= 3;
-        if (num > 1 || count2 > count3) cout << -1 << endl;
-        else cout << (count3 - count2) + count3 << endl;
-        // if (num == 1 && count2 <= count3) 
-        //     cout << (count3 - count2) + count3 << endl;
+        int count_2 = 0, count_3 = 0;
+        while (num % 2 == 0) count_2++, num /= 2;
+        while (num % 3 == 0) count_3++, num /= 3;
+
+        // if (num == 1 && count_2 <= count_3) 
+        //     cout << 2 * count_3 - count_2 << endl;
         // else 
         //     cout << -1 << endl;
+
+        if (num > 1 || count_2 > count_3) cout << -1 << endl;
+        else cout << 2 * count_3 - count_2 << endl;
     }
 
     return 0;
